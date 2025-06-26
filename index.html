@@ -908,18 +908,55 @@
             text-decoration: underline;
         }
 
-       .hero-content {
+       .hero {
+            padding: 40px 20px;
+        }
+
+        .hero-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00C896;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background-color: #00b184;
         }
 
         .hero-visual {
-            width: 3700px;               /* wider than before */
-            height: 640px;
-            margin-left: auto;
-            margin-right: auto;
+            flex: 1 1 400px;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
@@ -930,11 +967,39 @@
         }
 
         .hero-visual video {
-            width: 3700px;              /* fixed width to stretch it */
-            height: 100%;
-            object-fit: contain;        /* show entire video without cropping */
-            object-position: center;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
             border-radius: 24px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-visual {
+                max-width: 100%;
+            }
+
+            .hero-visual video {
+                object-fit: cover;
+            }
         }
 
 
@@ -1231,7 +1296,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo-section">
-                    <img src="Logo.png" alt="Your Logo" style="height: 30px; width: 100px;">
+                    <img src="Logo.png" alt="Your Logo" style="height: 30px; width: 150px;">
             </div>
             
             <ul class="nav-menu">
@@ -1265,23 +1330,22 @@
    
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Redefining Elder Care with AI & Robotics</h1>
-                    <p>Combining cutting-edge artificial intelligence with advanced robotics to provide compassionate, efficient, and personalized care for elderly individuals while supporting their families and caregivers.</p>
-                    <a href="#services" class="hero-cta">Explore Solutions</a>
-                </div>
-                <div class="hero-visual">
-                        <video autoplay muted loop playsinline>
-                            <source src="Alviora.mp4" type="video/mp4">
-                        </video>
-                        
-                </div>
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Redefining Elder Care with AI & Robotics</h1>
+                <p>Combining cutting-edge artificial intelligence with advanced robotics to provide compassionate, efficient, and personalized care for elderly individuals while supporting their families and caregivers.</p>
+                <a href="#services" class="hero-cta">Explore Solutions</a>
+            </div>
+            <div class="hero-visual">
+                <video autoplay muted loop playsinline>
+                    <source src="Alviora.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
 
     <!-- Features Section -->
