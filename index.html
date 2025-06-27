@@ -1050,6 +1050,12 @@
             box-shadow: 0 12px 32px rgba(54,143,245,0.2);
         }
 
+        .services-image {
+            margin-top: 2rem;
+            position: relative;
+            z-index: 0; 
+        }
+
         .product-image img,
         .feature-image img {
             width: 100%;
@@ -1069,7 +1075,18 @@
             display: none;
         }
 
-        
+        .services-image {
+            max-width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .services-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
 
 
         /* FULLY COMPLETED RESPONSIVE DESIGN FIXES */
@@ -1180,16 +1197,16 @@
         /* Force Image Scaling Within Cards */
         .feature-image img,
         .product-image img {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
         }
 
         /* Fix CTA and Text Spacing */
         .hero-cta,
         .cta-button {
-        font-size: 1rem;
-        padding: 12px 24px;
+            font-size: 1rem;
+            padding: 12px 24px;
         }
 
         @media (max-width: 480px) {
@@ -1215,41 +1232,104 @@
 
         /* Accessibility Adjustments */
         *:focus {
-        outline: 2px dashed #6366F1;
-        outline-offset: 2px;
+            outline: 2px dashed #6366F1;
+            outline-offset: 2px;
         }
 
         /* Final Layout Tweaks */
         .header {
-        flex-wrap: wrap;
-        padding: 0.5rem 1rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 1rem;
         }
 
         .nav-container {
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .hero-visual video {
-        width: 100%;
-        max-height: 300px;
-        object-fit: cover;
-        border-radius: 16px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
         }
 
         .demo-content {
-        padding: 2rem 1rem;
-        text-align: center;
+            padding: 2rem 1rem;
+            text-align: center;
         }
 
         .success-message {
-        text-align: center;
-        font-size: 0.95rem;
-        border-radius: 6px;
+            text-align: center;
+            font-size: 0.95rem;
+            border-radius: 6px;
         }
 
-        
+        .section-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+
+                /* Adjust SVG image position under heading */
+        .services-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .services-text {
+            flex: 1 1 55%;
+            min-width: 320px;
+        }
+
+        .services-list {
+            flex: 1 1 40%;
+            min-width: 280px;
+        }
+
+        .services-text {
+            position: relative;
+            z-index: 2;
+        }
+        .services-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-image img {
+            max-width: 75%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            margin-top: 2.5rem;  /* Ensure it never touches the text */
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        /* Enhance vertical spacing on mobile */
+        @media (max-width: 768px) {
+        .services-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .services-text,
+        .services-list {
+            flex: 1 1 100%;
+        }
+
+        .services-image img {
+            margin: 0 auto;
+        }
+        }
+
 
     </style>
 </head>
@@ -1270,7 +1350,7 @@
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#products" class="nav-link">Products</a></li>
             </ul>
-            <a href="#" class="cta-button">GET STARTED</a>
+            <a href="#" class="cta-button"></a>
             <div class="mobile-toggle" id="mobileToggle">
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
@@ -1343,41 +1423,54 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="services-content">
-                <div class="services-text">
-                    <div class="section-subtitle">OUR SERVICES</div>
-                    <h2 class="section-title">Empowering Industries with Intelligent Automation</h2>
-                    <div class="services-image">Services overview image</div>
-                    <a href="#products" class="hero-cta">View All Services</a>
-                </div>
-                <div class="services-list">
-                    <div class="service-item">
-                        <div class="service-icon">👥</div>
-                        <div class="service-content">
-                            <h3>Elderly Individuals</h3>
-                            <p>Personalized AI assistance that adapts to individual needs, preferences, and health conditions for optimal care delivery.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon">👨‍👩‍👧‍👦</div>
-                        <div class="service-content">
-                            <h3>Family Members</h3>
-                            <p>Comprehensive monitoring and reporting systems that keep families connected and informed about their loved ones' wellbeing.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon">🏥</div>
-                        <div class="service-content">
-                            <h3>Healthcare Providers</h3>
-                            <p>Advanced analytics and predictive insights that enhance clinical decision-making and improve patient outcomes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="services">
+  <div class="container">
+    <div class="services-content">
+
+      <!-- Left Content Block -->
+      <div class="services-text">
+        <div class="section-subtitle">OUR SERVICES</div>
+        <h2 class="section-title">
+          Empowering Industries with <span class="highlighted">Intelligent Automation</span>
+        </h2>
+
+        <!-- Services Overview SVG -->
+        
+          <img src="services-overview.svg" alt="AI-Powered Elder Care Ecosystem" loading="lazy">
+        
+
+        <a href="#products" class="hero-cta">View All Services</a>
+      </div>
+
+      <!-- Right Content Block -->
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-icon" aria-hidden="true">👥</div>
+          <div class="service-content">
+            <h3>Elderly Individuals</h3>
+            <p>Personalized AI assistance that adapts to individual needs, preferences, and health conditions for optimal care delivery.</p>
+          </div>
         </div>
-    </section>
+        <div class="service-item">
+          <div class="service-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <div class="service-content">
+            <h3>Family Members</h3>
+            <p>Comprehensive monitoring and reporting systems that keep families connected and informed about their loved ones' wellbeing.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon" aria-hidden="true">🏥</div>
+          <div class="service-content">
+            <h3>Healthcare Providers</h3>
+            <p>Advanced analytics and predictive insights that enhance clinical decision-making and improve patient outcomes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <div class="stat-card">
                     <span class="stat-number">50%</span>

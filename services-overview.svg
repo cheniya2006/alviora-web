@@ -1,0 +1,200 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a4e;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1a1a3e;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Background pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="2" fill="#667eea"/>
+    <circle cx="200" cy="150" r="1.5" fill="#764ba2"/>
+    <circle cx="300" cy="80" r="2" fill="#667eea"/>
+    <circle cx="500" cy="120" r="1.5" fill="#764ba2"/>
+    <circle cx="650" cy="180" r="2" fill="#667eea"/>
+    <circle cx="750" cy="250" r="1.5" fill="#764ba2"/>
+  </g>
+  
+  <!-- Central Hub - Robot/AI Core -->
+  <g transform="translate(400, 300)">
+    <!-- Core circle -->
+    <circle cx="0" cy="0" r="80" fill="url(#accentGradient)" filter="url(#glow)"/>
+    
+    <!-- Inner tech pattern -->
+    <g opacity="0.8">
+      <circle cx="0" cy="0" r="60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+    </g>
+    
+    <!-- AI Brain symbol -->
+    <g fill="#ffffff" opacity="0.9">
+      <!-- Brain outline -->
+      <path d="M-25,-15 Q-30,-25 -20,-30 Q-10,-35 0,-30 Q10,-35 20,-30 Q30,-25 25,-15 Q30,-5 25,5 Q20,15 10,20 Q-10,20 -20,15 Q-30,5 -25,-15 Z" fill="none" stroke="#ffffff" stroke-width="2"/>
+      
+      <!-- Neural network lines -->
+      <line x1="-15" y1="-10" x2="15" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="-15" y1="10" x2="15" y2="-10" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="0" y1="-15" x2="0" y2="15" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      
+      <!-- Neural nodes -->
+      <circle cx="-10" cy="-5" r="2" fill="#ffffff"/>
+      <circle cx="10" cy="-5" r="2" fill="#ffffff"/>
+      <circle cx="0" cy="8" r="2" fill="#ffffff"/>
+    </g>
+    
+    <!-- Rotating ring -->
+    <g>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+      <circle cx="0" cy="0" r="70" fill="none" stroke="#667eea" stroke-width="1" opacity="0.5" stroke-dasharray="5,5"/>
+    </g>
+  </g>
+  
+  <!-- Service Card 1: Elderly Individuals -->
+  <g transform="translate(150, 150)">
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="url(#cardGradient)" filter="url(#softGlow)"/>
+    <rect x="2" y="2" width="176" height="116" rx="13" fill="none" stroke="#667eea" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Icon -->
+    <g transform="translate(20, 20)">
+      <!-- Elderly person icon -->
+      <circle cx="15" cy="15" r="12" fill="#667eea"/>
+      <path d="M15,30 Q8,25 8,35 L22,35 Q22,25 15,30" fill="#667eea"/>
+      <!-- Walking stick -->
+      <line x1="25" y1="20" x2="25" y2="35" stroke="#764ba2" stroke-width="2"/>
+      <circle cx="25" cy="18" r="2" fill="#764ba2"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Elderly Individuals</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">Personalized AI Care</text>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">24/7 Health Monitoring</text>
+    
+    <!-- Connection line to center -->
+    <line x1="180" y1="60" x2="240" y2="220" stroke="#667eea" stroke-width="2" opacity="0.6" stroke-dasharray="3,3">
+      <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Service Card 2: Family Members -->
+  <g transform="translate(470, 150)">
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="url(#cardGradient)" filter="url(#softGlow)"/>
+    <rect x="2" y="2" width="176" height="116" rx="13" fill="none" stroke="#764ba2" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Icon -->
+    <g transform="translate(20, 20)">
+      <!-- Family icon -->
+      <circle cx="10" cy="8" r="6" fill="#764ba2"/>
+      <circle cx="20" cy="8" r="6" fill="#764ba2"/>
+      <circle cx="30" cy="8" r="6" fill="#764ba2"/>
+      <path d="M10,18 Q5,15 5,22 L15,22 Q15,15 10,18" fill="#764ba2"/>
+      <path d="M20,18 Q15,15 15,22 L25,22 Q25,15 20,18" fill="#764ba2"/>
+      <path d="M30,18 Q25,15 25,22 L35,22 Q35,15 30,18" fill="#764ba2"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Family Members</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">Real-time Updates</text>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">360° Remote Viewing</text>
+    
+    <!-- Connection line to center -->
+    <line x1="0" y1="60" x2="-70" y2="220" stroke="#764ba2" stroke-width="2" opacity="0.6" stroke-dasharray="3,3">
+      <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Service Card 3: Healthcare Providers -->
+  <g transform="translate(300, 430)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#cardGradient)" filter="url(#softGlow)"/>
+    <rect x="2" y="2" width="196" height="116" rx="13" fill="none" stroke="#667eea" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Icon -->
+    <g transform="translate(20, 20)">
+      <!-- Healthcare icon -->
+      <rect x="5" y="0" width="20" height="30" rx="5" fill="#667eea"/>
+      <rect x="0" y="10" width="30" height="5" fill="#667eea"/>
+      <!-- Stethoscope -->
+      <path d="M35,5 Q40,0 45,5 Q40,10 35,5" fill="none" stroke="#764ba2" stroke-width="2"/>
+      <circle cx="35" cy="5" r="3" fill="none" stroke="#764ba2" stroke-width="2"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Healthcare Providers</text>
+    <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">AI-Powered Analytics</text>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#b0b0b0">Telemedicine Integration</text>
+    
+    <!-- Connection line to center -->
+    <line x1="100" y1="0" x2="0" y2="-80" stroke="#667eea" stroke-width="2" opacity="0.6" stroke-dasharray="3,3">
+      <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Data Flow Particles -->
+  <g opacity="0.7">
+    <!-- Particle 1 -->
+    <circle cx="0" cy="0" r="3" fill="#667eea">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M320,240 Q400,200 480,240"/>
+    </circle>
+    
+    <!-- Particle 2 -->
+    <circle cx="0" cy="0" r="2" fill="#764ba2">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M480,240 Q450,350 400,430"/>
+    </circle>
+    
+    <!-- Particle 3 -->
+    <circle cx="0" cy="0" r="2.5" fill="#667eea">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M400,430 Q350,350 320,240"/>
+    </circle>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">AI-Powered Elder Care Ecosystem</text>
+  <text x="400" y="75" font-family="Arial, sans-serif" font-size="14" fill="#b0b0b0" text-anchor="middle">Connecting Technology, Care, and Compassion</text>
+  
+  <!-- Floating tech elements -->
+  <g opacity="0.4">
+    <g transform="translate(100, 400)">
+      <rect x="0" y="0" width="30" height="20" rx="3" fill="#667eea"/>
+      <rect x="5" y="5" width="20" height="10" rx="2" fill="#ffffff"/>
+      <animateTransform attributeName="transform" type="translate" values="100,400; 120,380; 100,400" dur="3s" repeatCount="indefinite"/>
+    </g>
+    
+    <g transform="translate(650, 400)">
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#764ba2" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#764ba2"/>
+      <animateTransform attributeName="transform" type="translate" values="650,400; 630,380; 650,400" dur="4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
