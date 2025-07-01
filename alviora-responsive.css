@@ -1381,16 +1381,18 @@ h2.section-title {
           }
         }
 
-        /* MOBILE RESPONSIVE FIX */
         @media (max-width: 768px) {
-          .hero {
-            padding-bottom: 1.5rem;
-          }
-
-          .features {
-            padding-top: 1.5rem;
+          body {
+            background-size: 40px 40px, 80px 80px;
+            background-position: 0 0, 20px 20px;
           }
         }
 
+        @media (max-width: 768px) {
+          body {
+            background-size: 40px 40px, 80px 80px, 80px 80px, 80px 80px;
+            background-position: 0 0, 20px 20px, 0 0, 0 0;
+          }
+        }
 
-
+        
