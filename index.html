@@ -789,6 +789,336 @@
             transform: scale(1.35);
         }
 
+        /* Pricing Section Styles - Matching Existing Website Design */
+        .pricing {
+            padding: 120px 0;
+            background: #0a0b14;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .pricing .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .pricing .section-subtitle {
+            color: rgba(139, 92, 246, 0.8);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .pricing .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 32px 64px rgba(139, 92, 246, 0.15);
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            background: rgba(139, 92, 246, 0.05);
+            transform: translateY(-12px);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            opacity: 0.7;
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            color: white;
+            padding: 10px 28px;
+            border-radius: 0 0 16px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        .plan-header {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .plan-name {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .price-amount {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .price-currency {
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(139, 92, 246, 0.9);
+            margin-top: 8px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 48px 0;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            color: #8b5cf6;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .pricing-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+            margin-top: auto;
+        }
+
+        .pricing-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .pricing-cta:hover::before {
+            left: 100%;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.15);
+            box-shadow: 0 12px 32px rgba(139, 92, 246, 0.2);
+        }
+
+        .pricing-cta.featured-cta {
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            border: 2px solid transparent;
+            color: white;
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        .pricing-cta.featured-cta:hover {
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pricing {
+                padding: 80px 0;
+            }
+            
+            .pricing .section-title {
+                font-size: 36px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .pricing-card {
+                padding: 40px 24px;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+                margin-top: 0;
+            }
+            
+            .price-amount {
+                font-size: 44px;
+            }
+            
+            .plan-name {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing {
+                padding: 60px 0;
+            }
+            
+            .pricing .container {
+                padding: 0 16px;
+            }
+            
+            .pricing .section-title {
+                font-size: 28px;
+            }
+            
+            .pricing-card {
+                padding: 32px 20px;
+                border-radius: 20px;
+            }
+            
+            .plan-name {
+                font-size: 22px;
+            }
+            
+            .price-amount {
+                font-size: 36px;
+            }
+            
+            .price-currency {
+                font-size: 18px;
+            }
+            
+            .feature-item {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+            
+            .pricing-cta {
+                padding: 16px 32px;
+                font-size: 15px;
+                border-radius: 12px;
+            }
+        }
+
         /* Testimonial Section */
         .testimonial {
             padding: 120px 0;
@@ -1412,6 +1742,7 @@
                 <li><a href="#about" class="nav-link">About Us</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
             </ul>
             <a href="#" class="cta-button"></a>
             <div class="mobile-toggle" id="mobileToggle">
@@ -1425,6 +1756,7 @@
             <a href="#about" class="mobile-nav-link">About Us</a>
             <a href="#services" class="mobile-nav-link">Services</a>
             <a href="#products" class="mobile-nav-link">Products</a>
+            <a href="#pricing" class="mobile-nav-link">Pricing</a>
             <div class="mobile-cta">
                 <a href="#" class="cta-button">GET STARTED</a>
             </div>
@@ -1538,16 +1870,16 @@
 
 
     <div class="stat-card">
-                    <span class="stat-number">50%</span>
-                    <div class="stat-label">Increase in care quality scores</div>
+                    <span class="stat-number">360°</span>
+                    <div class="stat-label">Real-time panoramic camera lets loved ones check in anytime.</div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">24/7</span>
                     <div class="stat-label">Continuous monitoring & support</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">3.6B</span>
-                    <div class="stat-label">Data points analyzed monthly</div>
+                    <span class="stat-number"> Smart Reminders</span>
+                    <div class="stat-label">No More Missed Medications, Scheduled voice alerts ensure timely intake, every day.</div>
                 </div>
             </div>
         </div>
@@ -1617,6 +1949,104 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">CHOOSE YOUR PLAN</div>
+                <h2 class="section-title gradient-text">Choose your plan</h2>
+            </div>
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Alviora Basic</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">437,000</span>
+                            <span class="price-currency">LKR</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            24/7 Health, Fall, Cough & Intrusion detection
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            Medication & activity reminders
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            HD depth camera with night vision
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            One-time purchase - no recurring fee
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta">Buy now</a>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">Alviora Pro</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">542,000</span>
+                            <span class="price-currency">LKR</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            All Base features, plus:
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            Advanced air quality & gas sensors
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            Multilingual voice AI companion
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            Medical organizer in emergency situation
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta featured-cta">Buy now</a>
+                </div>
+
+                <!-- Care Bundle Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Alviora Care Bundle</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">2,699,000</span>
+                            <span class="price-currency">LKR</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            5 x Alviora pro
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            Centralized dashboard for monitoring up to 45 residents
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            On-Site Installation & Training: Full staff onboarding & set-up
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta">Buy now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonial Section -->
     <section class="testimonial" id="about">
         <div class="container">
@@ -1639,23 +2069,23 @@
                     <div class="reason-item">
                         <h4>
                             <span class="reason-check">✓</span>
-                            Hybrid Human-AI Care
+                            Never Miss a Moment
                         </h4>
-                        <p>Perfect balance between human compassion and AI efficiency, ensuring personalized care that maintains the human touch while leveraging advanced technology.</p>
+                        <p>Automatic alerts via Telegram, SMS (Twilio), and email for emergencies, health risks, medicine time, or environmental warnings.</p>
                     </div>
                     <div class="reason-item">
                         <h4>
                             <span class="reason-check">✓</span>
-                            Holistic Design
+                            Detect Early, Respond Faster
                         </h4>
-                        <p>Comprehensive approach that addresses physical, emotional, and social needs of elderly individuals while supporting families and healthcare providers.</p>
+                        <p>AI models analyze camera feeds and audio to detect emotions and coughing. Triggers stroke risk alerts and caregiver notifications when anomalies are found.</p>
                     </div>
                     <div class="reason-item">
                         <h4>
                             <span class="reason-check">✓</span>
-                            Climate-Resilient Engineering
+                            Stay Alert, Stay Safe
                         </h4>
-                        <p>Advanced systems engineered to adapt to changing environmental conditions and ensure reliable operation in various climates and settings.</p>
+                        <p>Monitors temperature, gas levels, motion, and falls using real-time IoT sensors connected via Raspberry Pi. Get instant alerts when thresholds are crossed.</p>
                     </div>
                 </div>
             </div>
